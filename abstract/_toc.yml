@@ -16,5 +16,5 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: casingSEG2015_final
+root: casingSEG2015
 chapters: []
