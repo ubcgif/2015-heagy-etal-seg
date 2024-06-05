@@ -22,20 +22,20 @@
 \author{Lindsey J. Heagy$^1$ \footnotemark[1], Rowan Cockett$^1$, Douglas W. Oldenburg$^1$ and Michael Wilt$^2$ \\ $^1$University of British Columbia: Geophysical Inversion Facility, $^2$GroundMetrics}
 \email{lheagy@eos.ubc.ca}
 
-\footer{Example}
-\lefthead{Heagy, Cockett, Oldenburg \& Wilt}
-\righthead{Modelling EM problems in the presence of cased wells}
+% \footer{Example}
+% \lefthead{Heagy, Cockett, Oldenburg \& Wilt}
+% \righthead{Modelling EM problems in the presence of cased wells}
 
 \maketitle
 
 \begin{abstract}
 	Electrical conductivity can be a diagnostic physical property for distinguishing geologic units and delineating the distribution of fluids such as hydrocarbons and saline water within these units. Electromagnetic (EM) methods are sensitive to conductivity contrasts and can be used to characterize them. They are increasingly being applied in settings where cased wells are present. Most commonly-used casing materials, such as steel, are highly conductive, have a significant, often variable, magnetic permeability, and therefore significantly impact the behavior of the EM fields and fluxes. The aim of this paper is to revisit numerical modelling strategies to investigate the role of various properties and complexities due to the casing, and present a modelling and inversion strategy, using a primary-secondary approach, for capturing the impacts of both the variable casing and three dimensional geologic structures on EM data.
-\vspace{-8pt}
+% \vspace{-8pt}
 \end{abstract}
 
-\vspace{-8pt}
+% \vspace{-8pt}
 \section{Introduction}
-\vspace{-8pt}
+% \vspace{-8pt}
 Variations in subsurface electrical conductivity have been used as a diagnostic physical property in sedimentary settings for characterizing geologic formations, and the properties and distribution of fluids within those formations. Hydrocarbons and CO$_2$ are much more resistive than saline formation fluids, and are typically more resistive than fluids injected during enhanced recovery projects. This contrast has been the target of cross-well, surface-to-borehole and borehole-to-surface electromagnetic (EM) methods for monitoring and characterization applications (cf. \cite{Marsala2008, Marsala2011, Wilt1995}). These surveys are typically conducted in settings that have cased wells, and the many of the associated modelling strategies have focused on characterizing the distortion of the transmitted and received signals. \cite{cuevas2014} provides analytical solutions for dipolar sources in an infinite cylinder, which has supported modelling and inversion approaches that replace the casing in a model with an ``equivalent source'' created using a series of electric or magnetic dipoles (cf. \cite{cuevas2012}). Alternatively, some approaches to the inverse problem aim to bypass characterizing the response of the casing through constructing a datum that is independent of the casing effect and taking ratios of measured electromagnetic responses \citep{Gao2008, Liu2008}. More recently, there has been growing interest in using the casing as an extended source for carrying signal to reservoir depths \citep{Commer2015, Hoversten2014, Marsala2014, cuevas2014eage}. The aim of this paper is to revisit modelling strategies to allow for the investigation of the role of various properties and complexities due to the casing, and present a modelling and inversion strategy for capturing the impacts of both the variable casing and three dimensional geologic structures on EM data.
 
 Modelling and inverting EM geophysical data collected in settings including cased wells presents several significant challenges. Most wells are cased with carbon steel, which has both a large electrical conductivity ($\sim 5.5\times 10^6$ S/m), and magnetic permeability ($\sim 50 \mu_0$) \citep{wuhabashy1994}. This is a large contrast to typical geologic settings, with conductivities typically less than 1 S/m and permeabilities similar to that of free space, $\mu_0$. As a result, the casing may have a significant impact on the behavior of the EM fields and fluxes. The properties, in particular, magnetic susceptibility, as well as casing thickness can vary along the length of the well, depending both on the quality of the steel and the state of corrosion, adding another level of complexity to the situation. Well logging tools, such as that described by \cite{Brill2012} have been developed to characterize these variations.
@@ -44,9 +44,9 @@ Not only does casing introduce a large, variable, physical property contrast, it
 
 In this paper, we concentrate on two aspects of this problem. The first looks at the details of modelling a casing with complicated physical properties and examining the effects of putting different sources (both galvanic and inductive) at various locations in/on the casing. Second, we demonstrate how a primary-secondary approach for solving Maxwell's equations (cf. \cite{Haber2014a}) may be used to model three-dimensional geologic structures in settings including cased wells. This approach allows the problem of simulating the casing and the three dimensional geologic structures to be treated as two distinct problems. We first compute the response due to the transmitter and casing in a simple geologic background. In particular, we consider a vertical well in a one-dimensional geologic background and exploit cylindrical symmetry for computing the primary response. Secondly, we interpolate these fields to the secondary mesh, where they are used as a source for the secondary response. By decoupling these two problems the mesh design, computational strategies and model complexities for each problem can be treated separately.
 
-\vspace{-8pt}
+% \vspace{-8pt}
 \section{Approach}
-\vspace{-8pt}
+% \vspace{-8pt}
 To motivate our discussion, we consider the model shown in Figure \ref{fig:CasingGeoModel}, consisting of a vertical well in a layered background with a three- dimensional, resistive region in the reservoir layer, which is the target of the geophysical survey. The casing is composed of carbon steel ($5.5 \times 10^6 S/m$) and is filled with water-based drilling mud ($1 S/m$). We will consider three casing models in which we vary the magnetic permeability. In the first, we neglect any contributions of permeability, treating it as equal to that of free space ($\mu_0$); in the second we use a constant value of $50\mu_0$; in the third we consider a casing with variable permeability by including a segment which has a permeability of $150\mu_0$. For brevity of this example, we neglect surface casing and conductivity variations introduced by cement and invasion of drilling fluids into the surrounding formations. We employ a simple geologic background consisting of four layers, as shown in Figure \ref{fig:CasingGeoModel} and consider the frequency domain electromagnetic (FDEM) problem with three sources (illustrated in Figure \ref{fig:CasingGeoModel}) for inputting EM energy into the system: (1) using a downhole magnetic dipole source, (2) using a downhole galvanic source, and (3) exciting the casing at the surface using a galvanic source.
 \begin{figure}[h!]
 	\centering
@@ -147,16 +147,16 @@ The primary-secondary approach is well-suited for tackling the inverse problem i
 
 Such an approach provides opportunity for a significant reduction in the computational load required by a more traditional approach to the inverse problem where the full forward model, including the casing, must be considered at every iteration. Additionally, no intermediate inversion or analysis, for constructing an  ``equivalent source'', composed of point sources or dipoles is required. For the example we demonstrated, the casing, background geologic model and source location supported the use of a cylindrical mesh for the computation of the primary. In general, the background geology, well path, and source location may not adhere to this symmetry requiring a different strategy for computing the primary. This will likely require an expensive computation on a mesh which has been highly refined near the wellbore. Using the primary-secondary approach, however, means that only one such computation is required to address the inverse problem.
 
-\vspace{-8pt}
+% \vspace{-8pt}
 \section{Conclusion}
-\vspace{-8pt}
+% \vspace{-8pt}
 Using the primary-secondary approach for modelling EM surveys in settings where cased wells are present allows for a separation of concerns between accurately modelling well casing and modelling three dimensional geologic structures. In the first step, the source and casing are modelled in a simple geologic background.
 Well casing has significant electrical conductivity and magnetic permeability, both of which may be variable along the length of the well. This makes the casing a complicated structure to model, but an important one, as the large contrasts in physical properties it presents means that it may have a significant impact on the EM fields and fluxes.
 Much investigation remains to better understand how each of the complexities introduced by the casing impacts the behavior of the EM signals being used to excite responses in the surrounding geologic units. In the second step, the computed primary fields are used as a source for the secondary problem: simulating the behavior of the EM fields and fluxes in the presence of three dimensional geologic structures. This procedure removes concerns of accurately simulating the casing at this step, as the interaction of the source with the casing is captured in the computation of the primary response, and contained in the definition of the source for the secondary problem. When considering the inverse problem, this separation of concerns provides the benefit that the computation of the casing response need only be completed once. The remainder of the inversion is completed on a mesh suitable for characterizing the variations in the geologic structures of interest.
 
-\vspace{-10pt}
+% \vspace{-10pt}
 \section{ACKNOWLEDGMENTS}
-\vspace{-10pt}
+% \vspace{-10pt}
 The authors thank the contributors to \href{http://simpeg.xyz}{\SimPEG}  and \href{https://github.com/simpeg/simpegem}{\simpegEM}, in particular: Seogi Kang and Adam Pidlisecky. We also thank Eldad Haber and Christoph Schwarzbach.
 % for their insightful comments on the numerical implementation. Funding for this work was provided through NSERC.
 
