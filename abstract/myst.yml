@@ -20,7 +20,7 @@ project:
       email: doug@eos.ubc.ca
       orcid: 0000-0002-4327-2124
     - name: Michael Wilt
-    #   email: EMAIL 
+    #   email: EMAIL
     #   orcid: ORCID
       affiliation: GroundMetrics
   banner: banner.png
@@ -38,24 +38,28 @@ project:
   # github:
   # bibliography: []
   keywords:
-    - current density 
+    - current density
     - permeability
-    - mesh 
-    - electrical conductivity 
+    - mesh
+    - electrical conductivity
     - formulation
     - cased well
     - frequency
     - simple geologic background
     - galvanic source
     - upstream oil & gas
-  
+  downloads:
+    - file: ./2015-heagy-etal-seg.pdf
+      title: Download PDF
+    - file: ./presentation/SEG2015Casing.pdf
+      title: Download Slides
 site:
   template: article-theme
   actions:
     - title: pdf
       url: 2015-heagy-etal-seg.pdf
       static: true
-    # - title: slides
-    #   url: presentation/SLIDES-NAME.pdf
-    #   static: true
+    - title: slides
+      url: presentation/SEG2015Casing.pdf
+      static: true
   domains: []
