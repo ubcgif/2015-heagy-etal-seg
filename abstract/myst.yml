@@ -1,52 +1,65 @@
 version: 1
 project:
-  # id: ubcgif-YEAR-AUTHORS-CONFERENCE
-  # title: TITLE
-  # description: DESCRIPTION
+  id: ubcgif-2015-heagy-etal-seg
+  title: Modelling electromagnetic problems in the presence of cased wells
+  description: Revisiting numerical modelling strategies to investigate the role of various properties and complexities due to the casing, and present a modelling and inversion strategy.
   authors:
-    # - name: AUTHOR 1
+    - name: Lindsey J. Heagy
+      email: lheagy@eoas.ubc.ca
+      corresponding: true
+      orcid: 0000-0002-1551-5926
+      affiliation:
+        id: ubc
+        name: Department of Earth, Ocean and Atmospheric Sciences, University of British Columbia, Vancouver, British Columbia
+    - name: Rowan Cockett
+      email: rowan@curvenote.com
+      orcid: 0000-0002-7859-8394
+      affiliation: ubc
+    - name: Douglas W. Oldenburg
+      affiliation: ubc
+      email: doug@eos.ubc.ca
+      orcid: 0000-0002-4327-2124
+    - name: Michael Wilt
     #   email: EMAIL
-    #   corresponding: true
     #   orcid: ORCID
-    #   affiliation:
-    #     id: ubc
-    #     name: Department of Earth, Ocean and Atmospheric Sciences, University of British Columbia, Vancouver, British Columbia
-    # - name: Lindsey J. Heagy
-    #   email: lheagy@eoas.ubc.ca
-    #   corresponding: true
-    #   orcid: 0000-0002-1551-5926
-    #   affiliation: ubc
-    # - name: Douglas W. Oldenburg
-    #   affiliation: ubc
-    #   email: doug@eos.ubc.ca
-    #   orcid: 0000-0002-4327-2124
-  # banner: banner.png
+      affiliation: GroundMetrics
+  banner: banner.png
   thumbnail: thumbnail.png
-  # subject: Electromagnetics
+  subject: Electromagnetics
   venue:
-    # title: CONFERENCE NAME
-    # url: CONFERENCE URL
-  license: CC-BY-4.0
-  open_access: true
-  # doi: DOI
+    title: 2015 SEG New Orleans Annual Meeting
+    url: https://library.seg.org/doi/10.1190/segam2015-5931035.1
+  # license: CC-BY-4.0
+  # open_access: true
+  doi: 10.1190/segam2015-5931035.1
   abbreviations:
-    # DC: direct current
-    # EM: electromagnetics
+    FDEM: frequency domain electromagnetic
+    EM: electromagnetics
   # github:
   # bibliography: []
-  # keywords:
-  #   - Controlled source electromagnetics (CSEM)
-  #   - Downhole methods
-  #   - Numerical modelling
-  #   - Electrical properties
-  #   - Magnetic properties
+  keywords:
+    - current density
+    - permeability
+    - mesh
+    - electrical conductivity
+    - formulation
+    - cased well
+    - frequency
+    - simple geologic background
+    - galvanic source
+    - upstream oil & gas
+  # downloads:
+  #   - file: ./2015-heagy-etal-seg.pdf
+  #     title: Download PDF
+  #   - file: ./presentation/SEG2015Casing.pdf
+  #     title: Download Slides
 site:
   template: article-theme
   actions:
-    # - title: pdf
-    #   url: ARTICLE-NAME.pdf
-    #   static: true
-    # - title: slides
-    #   url: presentation/SLIDES-NAME.pdf
-    #   static: true
-  # domains: []
+    - title: pdf
+      url: 2015-heagy-etal-seg.pdf
+      static: true
+    - title: slides
+      url: presentation/SEG2015Casing.pdf
+      static: true
+  domains: []
