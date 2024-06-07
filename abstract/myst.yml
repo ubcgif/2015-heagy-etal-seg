@@ -48,11 +48,11 @@ project:
     - simple geologic background
     - galvanic source
     - upstream oil & gas
-  downloads:
-    - file: ./2015-heagy-etal-seg.pdf
-      title: Download PDF
-    - file: ./presentation/SEG2015Casing.pdf
-      title: Download Slides
+  # downloads:
+  #   - file: ./2015-heagy-etal-seg.pdf
+  #     title: Download PDF
+  #   - file: ./presentation/SEG2015Casing.pdf
+  #     title: Download Slides
 site:
   template: article-theme
   actions:
